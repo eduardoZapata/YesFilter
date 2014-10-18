@@ -4,10 +4,12 @@
 		<script type="text/javascript" src="instafeed.min.js"></script>
 		<script type="text/javascript"> 
 			var feed = new Instafeed({ 
-				get: 'popular',
+				get: 'tagged',
 				tagName: 'nofilter',
 				clientId: '587c4cfe89d34e9eb38a1923aba677dc',
-				template: '<a class="animation" href="https://{{link}}"><img src="https://{{image}}" /></a>' }); 
+				resolution: 'standard_resolution',
+				template: '<a class="animation" href="{{link}}"><img src="https://{{image}}" height="400" width="400"/></a>' }); 
+				
 				feed.run(); 
 		</script>
 	</header>
