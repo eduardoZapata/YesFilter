@@ -5,13 +5,14 @@
 		<script type="text/javascript"> 
 			var feed = new Instafeed({ 
 				get: 'popular',
-				tagName: 'awesome',
+				tagName: 'nofilter',
 				clientId: '587c4cfe89d34e9eb38a1923aba677dc',
-				template: '<a class="animation" href="{{link}}"><img src="{{image}}" /></a>' }); 
+				template: '<a class="animation" href="https://{{link}}"><img src="https://{{image}}" /></a>' }); 
 				feed.run(); 
 		</script>
 	</header>
 	<body>
 		something
+		<div id="instafeed"></div>
 	</body>
 </html>
