@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: 'Billabong';
-  src: url('/var/www/html/fonts/Billabong.ttf');
+  src: url('../fonts/Billabong.ttf');
 }
 
 /* Links */
