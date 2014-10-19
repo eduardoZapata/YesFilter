@@ -92,11 +92,12 @@
     <script type="text/javascript">
       $('#yesButton').click(function() {
           if(isFilter) {
-            console.log("someghting");
+            //console.log("someghting");
             alert("You're right!");
           } else {
             alert("You're wrong!");
           }
+          window.location.reload();
         });
         $('#noButton').click(function() {
           if(isFilter) {
@@ -104,6 +105,7 @@
           } else {
             alert("You're right!");
           }
+          window.location.reload();
         });</script>
     <script src="./bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
     <script src="./js/docs.min.js"></script>
