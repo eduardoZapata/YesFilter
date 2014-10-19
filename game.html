@@ -20,6 +20,7 @@
   <style id="holderjs-style" type="text/css"></style><style type="text/css"></style>
   <script type="text/javascript" src="instafeed.min.js"></script>
     <script type="text/javascript"> 
+      var isFilter;
       var feed = new Instafeed({ 
         get: 'tagged',
         tagName: 'nofilter',
@@ -28,7 +29,10 @@
         template: '<a class="instafeedImages" href="{{link}}"><img src="https://{{image}}"/></a>',
         limit: 1,      
         filter: function(image){
-          return image.filter !== 'Normal';
+          var filter = (Math.random() > .5) ? (image.filter !== 'Normal') : (image.filter === 'Normal');
+          isFilter = image.filter !== 'Normal';
+          //alert(image.filter);
+          return filter;
         },
         after: function() {
             if($('#instafeed').children().length == 0) {
@@ -66,10 +70,10 @@
             <br>
             <div class="btn-group btn-group-justified">
               <div class="btn-group">
-                <button type="button" class="btn btn-default">Yes</button>
+                <button type="button" id="yesButton"class="btn btn-default">Yes</button>
               </div>
               <div class="btn-group">
-                <button type="button" class="btn btn-default">No</button>
+                <button type="button" id="noButton"class="btn btn-default">No</button>
               </div>
             </div>
 
@@ -85,6 +89,22 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="./js/jquery.min.js"></script>
+    <script type="text/javascript">
+      $('#yesButton').click(function() {
+          if(isFilter) {
+            console.log("someghting");
+            alert("You're right!");
+          } else {
+            alert("You're wrong!");
+          }
+        });
+        $('#noButton').click(function() {
+          if(isFilter) {
+            alert("You're wrong!");
+          } else {
+            alert("You're right!");
+          }
+        });</script>
     <script src="./bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
     <script src="./js/docs.min.js"></script>
 
