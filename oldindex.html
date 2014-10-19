@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+	<header>
+		<script type="text/javascript" src="instafeed.min.js"></script>
+		<script type="text/javascript"> 
+			var feed = new Instafeed({ 
+				get: 'tagged',
+				tagName: 'nofilter',
+				clientId: '587c4cfe89d34e9eb38a1923aba677dc',
+				template: '<a class="animation" href="{{link}}"><img src="https://{{image}}"/></a>',
+				limit: 20,			
+				filter: function(image){
+					return image.filter !== "Normal";
+				},
+				after: function() {
+					if(this.hasNext()){
+						this.next();
+						sleep(2000);
+					}
+				}
+				
+
+				}); 
+				
+				feed.run();
+				function sleep(milliseconds) {
+  					var start = new Date().getTime();
+  					for (var i = 0; i < 1e7; i++) {
+    				if ((new Date().getTime() - start) > milliseconds){
+      					break;
+    				}
+  				}
+} 
+		</script>
+	</header>
+	<body>
+		something
+		<div id="instafeed"></div>
+	</body>
+</html>
