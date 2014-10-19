@@ -21,6 +21,7 @@
   <script type="text/javascript" src="instafeed.min.js"></script>
     <script type="text/javascript"> 
       var instaRefreshCounter = 0;
+
       var feed = new Instafeed({ 
         get: 'tagged',
         tagName: 'nofilter',
@@ -36,11 +37,13 @@
             instaRefreshCounter++;
           }
         }
-        
 
-        }); 
-        
-        feed.run(); 
+      }); 
+
+      feed.run();
+       
+      
+      
     </script></head>
 
   <body>
@@ -64,18 +67,16 @@
 
           <div class="inner cover">
             <h3 class="cover-heading">#NoFilter gets thrown around a bit too often on Instagram.</h1>
-            <p class="lead">#YesFilter detects who is lying about their filtering habits.Is your picture one of these?</p>
+            <p class="lead">#YesFilter detects who is lying about their filtering habits. Is your picture one of these?</p>
+             
             <div id="instafeed" style="overflow-y: scroll; height:400px;">
+             
+              </div>
 
-            </div>
+
           </div>
-
-          <div class="mastfoot">
-            <div class="inner">
-              <p>Cover template for <a href="http://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-            </div>
-          </div>
-
+          <br>
+          <b>Refresh the page for more pictures!</b>
         </div>
 
       </div>
