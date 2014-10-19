@@ -20,6 +20,7 @@
   <style id="holderjs-style" type="text/css"></style><style type="text/css"></style>
   <script type="text/javascript" src="instafeed.min.js"></script>
     <script type="text/javascript"> 
+      var instaRefreshCounter = 0;
       var feed = new Instafeed({ 
         get: 'tagged',
         tagName: 'nofilter',
@@ -30,8 +31,9 @@
           return image.filter !== "Normal";
         },
         after: function() {
-          if(this.hasNext()){
+          if(this.hasNext() && instaRefreshCounter < 10){
             this.next();
+            instaRefreshCounter++;
           }
         }
         
@@ -62,7 +64,7 @@
 
           <div class="inner cover">
             <h3 class="cover-heading">#NoFilter gets thrown around a bit too often on Instagram.</h1>
-            <p class="lead">Is your picture one of these?</p>
+            <p class="lead">#YesFilter detects who is lying about their filtering habits.Is your picture one of these?</p>
             <div id="instafeed" style="overflow-y: scroll; height:400px;">
 
             </div>
