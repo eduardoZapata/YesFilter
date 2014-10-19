@@ -1,4 +1,4 @@
-<SCRIPT language=JavaScript1.2>
+
 //change 1 to another integer to alter the scroll speed. Greater is faster
 var speed=1
 var currentpos=0,alt=1,curpos1=0,curpos2=-1
@@ -6,7 +6,7 @@ function initialize(){
 	startit()
 }
 
-function scrollwindow(){
+function scrollwindow() {
 	if (document.all && !document.getElementById)
 		temp=document.body.scrollTop
 	else
@@ -31,12 +31,10 @@ function scrollwindow(){
 		window.scroll(0,currentpos)
 	}
 
-	}	
+}	
 
-	function startit(){
-		setInterval("scrollwindow()",50)
-	}
+function startit(){
+	setInterval("scrollwindow()",50)
+}
 
 	window.onload=initialize
-</SCRIPT>
-
